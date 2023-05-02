@@ -26,14 +26,15 @@ thirdLink.addEventListener('click', function(event){
 
 let myDiv = document.createElement('div');
 function para(event){
-    console.log('i Have clicked on a para');
+    console.log(' para' +event.target.textContent);
 };
+myDiv.addEventListener('click', para);
 
 for (let i = 0; i <100; i++) {
     let newElement= document.createElement('p');
     newElement.textContent='This is para' + i;
     
-    newElement.addEventListener('click', para)
+    
 
     myDiv.appendChild(newElement)
 }
