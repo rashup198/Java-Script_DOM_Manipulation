@@ -49,3 +49,45 @@ vaada1.then(()=>{
 }).then((value)=>{
     console.log(value);
 })
+
+
+async function abcd(){
+    return 7;
+}
+
+console.log(abcd());
+
+
+
+async function utilty(){
+let delhiMausan = new Promise(function(resolve, reject){
+    setTimeout(() => {
+        resolve("Delhi me bahut garmi hai")
+    }, 1000);
+
+})
+
+let HydMausan = new Promise(function(resolve, reject){
+    setTimeout(() => {
+        resolve("Hyderabad is cool")
+    }, 5000);
+
+})
+  
+let dm= delhiMausan;
+let hm = HydMausan;
+
+return [dm,hm];
+}
+
+console.log(utilty());
+
+
+async function ut(){
+    let content=await fetch('https://jsonplaceholder.typicode.com/posts/1');
+
+    let output = await content.json();
+    console.log(output);
+}
+
+console.log(ut());
