@@ -91,3 +91,33 @@ async function ut(){
 }
 
 console.log(ut());
+
+
+async function helper(){
+    
+    let option= {
+      method: 'POST',
+      body: JSON.stringify({
+        title: 'Babbar',
+        body: 'tagdi body',
+        userId: 1,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    }
+
+    let content = await fetch('https://jsonplaceholder.typicode.com/posts', option);
+
+    let response = content.json();
+    return response;
+
+}
+
+
+async function un(){
+    let ans=await helper;
+    console.log(ans);
+}
+
+un();
